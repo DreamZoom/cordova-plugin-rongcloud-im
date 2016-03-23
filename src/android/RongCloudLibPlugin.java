@@ -200,12 +200,13 @@ public class RongCloudLibPlugin extends CordovaPlugin {
         String title = (String) pm.getApplicationLabel(ai);
         String tickerText = mContext.getResources().getString(mContext.getResources().getIdentifier("rc_notification_ticker_text", "string", mContext.getPackageName()));
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
-        if (android.os.Build.VERSION.SDK_INT < 11) {
-            notification = new Notification(ai.icon, tickerText, System.currentTimeMillis());
-            notification.setLatestEventInfo(mContext, title, tickerText, pendingIntent);
-            notification.flags = Notification.FLAG_AUTO_CANCEL;
-            notification.defaults = Notification.DEFAULT_SOUND;
-        } else {
+        //if (android.os.Build.VERSION.SDK_INT < 11) {
+        //    notification = new Notification(ai.icon, tickerText, System.currentTimeMillis());
+        //    notification.setLatestEventInfo(mContext, title, tickerText, pendingIntent);
+        //    notification.flags = Notification.FLAG_AUTO_CANCEL;
+       //     notification.defaults = Notification.DEFAULT_SOUND;
+        //} else 
+        {
             BitmapDrawable bitmapDrawable = (BitmapDrawable) ai.loadIcon(pm);
             Bitmap appIcon = bitmapDrawable.getBitmap();
             Notification.Builder builder = new Notification.Builder(mContext);
